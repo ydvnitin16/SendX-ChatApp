@@ -10,13 +10,16 @@ const ChatBox = () => {
     // If no chat is selected
     if (!selectedUserId) {
         return (
-            <div className='hidden md:flex flex-1 items-center justify-center h-full text-gray-400 bg-white rounded-4xl border-none md:rounded-none md:rounded-r-4xl dark:bg-zinc-900 dark:text-white'>
-                Select a chat to start messaging
+            <div className='hidden md:flex flex-1 items-center justify-center h-full text-slate-400 bg-white dark:bg-slate-900 rounded-lg shadow-sm dark:shadow-lg dark:shadow-slate-950/30 border border-slate-200/50 dark:border-slate-800/50'>
+                <div className='text-center'>
+                    <p className='text-lg font-medium'>Select a conversation</p>
+                    <p className='text-sm mt-1'>Choose a chat to start messaging</p>
+                </div>
             </div>
         );
     }
     return (
-        <main className='flex flex-col bg-white dark:bg-zinc-900 rounded-2xl md:rounded-none border-none md:rounded-r-4xl flex-1 z-3 overflow-hidden'>
+        <main className='flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-sm dark:shadow-lg dark:shadow-slate-950/30 flex-1 z-3 overflow-hidden border border-slate-200/50 dark:border-slate-800/50'>
             <ChatHeader />
             <ChatList />
             <MessageInput />

@@ -57,17 +57,17 @@ const ChatBubble = ({
                     <>
                         <div
                             className={`
-                            px-3 py-2 rounded-2xl max-w-xs text-sm
-                            shadow-sm
+                            px-4 py-2.5 rounded-xl max-w-xs text-sm
+                            shadow-sm transition-all duration-200
                             ${
                                 isMine
-                                    ? "text-white rounded-2xl bg-[#0A84FF]/80 backdrop-blur-md border border-white/10 "
-                                    : "px-3 py-2 rounded-2xl max-w-xs text-sm backdrop-blur-md bg-white/20 dark:bg-zinc-700/30 border border-white/20 dark:border-zinc-600/30 shadow-sm"
+                                    ? "text-white rounded-xl bg-blue-500 border border-blue-600/30 "
+                                    : "px-4 py-2.5 rounded-xl max-w-xs text-sm bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"
                             }
                         `}
                         >
                             <div className='flex flex-wrap items-end gap-x-2'>
-                                <span className='break-words text-[15px]'>
+                                <span className={`break-words text-[15px] font-medium ${isMine ? "" : "text-slate-900 dark:text-slate-100"}`}>
                                     {content}
                                 </span>
 
@@ -76,8 +76,8 @@ const ChatBubble = ({
                                     flex items-center gap-1 text-[10px] whitespace-nowrap
                                     ${
                                         isMine
-                                            ? "text-zinc-200"
-                                            : "text-zinc-500 dark:text-zinc-400"
+                                            ? "text-blue-100"
+                                            : "text-slate-500 dark:text-slate-400"
                                     }
                                 `}
                                 >
@@ -88,24 +88,24 @@ const ChatBubble = ({
                         </div>
                         {status === "failed" && (
                             <div
-                                className='cursor-pointer hover:opacity-70'
+                                className='cursor-pointer hover:opacity-70 text-red-500 mt-1'
                                 onClick={() => handleResend(data)}
                             >
-                                <RotateCw size={16} />
+                                <RotateCw size={14} />
                             </div>
                         )}
                     </>
                 )}
 
                 {type === "image" && (
-                    <div className='relative max-w-xs'>
+                    <div className='relative max-w-xs rounded-xl overflow-hidden shadow-sm ring-1 ring-slate-200 dark:ring-slate-700'>
                         <img
                             src={content}
                             alt='chat-img'
-                            className='rounded-xl object-cover max-h-60 border border-zinc-200 dark:border-zinc-700'
+                            className='rounded-xi object-cover max-h-60 w-full'
                         />
 
-                        <div className='absolute bottom-1 right-2 text-[10px] bg-black/50 text-white px-2 py-0.5 rounded flex items-center gap-1'>
+                        <div className='absolute bottom-2 right-2 text-[10px] bg-black/60 backdrop-blur-sm text-white px-2 py-1 rounded-lg flex items-center gap-1'>
                             {time || "23:12"}
                             {isMine && renderStatus()}
                         </div>

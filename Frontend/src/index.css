@@ -1,4 +1,29 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900;
+  }
+  
+  /* Smooth scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -6,5 +31,15 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  /* Card shadow utilities */
+  .card-shadow {
+    @apply shadow-sm dark:shadow-lg dark:shadow-slate-950/30;
+  }
+  
+  /* Smooth transitions */
+  .smooth-transition {
+    @apply transition-all duration-200 ease-out;
   }
 }

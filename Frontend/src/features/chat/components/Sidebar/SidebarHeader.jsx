@@ -40,10 +40,10 @@ const SidebarHeader = ({ user, handleLogout }) => {
                 </Suspense>
             )}
 
-            <div className='flex justify-between items-center px-3 pt-3 pb-1.5  mx-1  dark:text-white'>
-                <h1 className='flex gap-1 items-center text-2xl font-bold'>
+            <div className='flex justify-between items-center px-4 pt-4 pb-2 mx-0 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800'>
+                <h1 className='flex gap-2 items-center text-xl font-bold text-slate-900 dark:text-slate-100'>
                     <div
-                        className='w-10 h-10 bg-black dark:bg-white '
+                        className='w-8 h-8 bg-slate-900 dark:bg-slate-100'
                         style={{
                             WebkitMaskImage: "url('/sendx-icon-dark.png')",
                             WebkitMaskRepeat: "no-repeat",
@@ -53,7 +53,7 @@ const SidebarHeader = ({ user, handleLogout }) => {
                             maskSize: "contain",
                         }}
                     />
-                    SendX
+                    <span>SendX</span>
                 </h1>
                 <div className='relative'>
                     <img
@@ -63,29 +63,29 @@ const SidebarHeader = ({ user, handleLogout }) => {
                             "small",
                         )}
                         alt={user?.name}
-                        className='w-10 h-10 rounded-full cursor-pointer'
+                        className='w-10 h-10 rounded-full cursor-pointer ring-2 ring-slate-200 dark:ring-slate-700 hover:ring-blue-300 dark:hover:ring-blue-900 transition-all'
                         onClick={() => setShowDropdown(!showDropdown)}
                     />
                     {showDropdown && (
-                        <div className='absolute right-0 mt-2 w-48 bg-white border border-zinc-300 dark:border-zinc-700 rounded-lg shadow z-50 dark:bg-zinc-900'>
-                            <ul className='text-md p-1'>
+                        <div className='absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-50'>
+                            <ul className='text-sm p-1'>
                                 <li
                                     onClick={() => {
                                         setIsProfileModalOpen(true);
                                         setShowDropdown(false);
                                     }}
-                                    className='flex gap-2 p-2 hover:bg-zinc-600 rounded-lg cursor-pointer'
+                                    className='flex gap-2 p-3 hover:bg-blue-50 dark:hover:bg-slate-700 rounded-lg cursor-pointer text-slate-700 dark:text-slate-200 transition-colors'
                                 >
-                                    <UserRound /> Go To Profile
+                                    <UserRound size={18} /> Go To Profile
                                 </li>
                                 <li
                                     onClick={() => {
                                         setLogoutModal(true);
                                         setShowDropdown(false);
                                     }}
-                                    className='flex gap-2 p-2 hover:bg-zinc-600 rounded-lg cursor-pointer'
+                                    className='flex gap-2 p-3 hover:bg-red-50 dark:hover:bg-slate-700 rounded-lg cursor-pointer text-red-600 dark:text-red-400 transition-colors'
                                 >
-                                    <LogOut /> Logout
+                                    <LogOut size={18} /> Logout
                                 </li>
                             </ul>
                         </div>

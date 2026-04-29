@@ -70,19 +70,19 @@ const ChatList = () => {
         <div
             ref={containerRef}
             onScroll={handleScroll}
-            className='flex-1 flex-col p-3 space-y-4 overflow-y-auto overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-2 py-20 md:pb-2 
+            className='flex-1 flex-col p-4 space-y-3 overflow-y-auto overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-2 py-20 md:pb-2 
                     [&::-webkit-scrollbar-track]:rounded-full
-                    [&::-webkit-scrollbar-track]:bg-gray-100
+                    [&::-webkit-scrollbar-track]:bg-slate-100
                     [&::-webkit-scrollbar-thumb]:rounded-full
-                    [&::-webkit-scrollbar-thumb]:bg-gray-300
-                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500
-                    bg-white dark:text-white dark:bg-zinc-950'
+                    [&::-webkit-scrollbar-thumb]:bg-slate-300
+                    dark:[&::-webkit-scrollbar-track]:bg-slate-800
+                    dark:[&::-webkit-scrollbar-thumb]:bg-slate-700
+                    bg-white dark:text-slate-100 dark:bg-slate-900'
         >
             {/* Chats appear here */}
             {isFetching && (
-                <p className='flex justify-center items-center '>
-                    <Loader />
+                <p className='flex justify-center items-center text-slate-400 dark:text-slate-500'>
+                    <Loader size={20} className='animate-spin' />
                 </p>
             )}
             {chatItems.length > 0 &&

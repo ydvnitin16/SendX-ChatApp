@@ -41,9 +41,9 @@ const MessageInput = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className='fixed bottom-5 left-0 right-0 px-3 md:px-6 md:static dark:md:bg-zinc-950 z-10'
+            className='fixed bottom-5 left-0 right-0 px-3 md:px-0 md:static dark:md:bg-slate-900 z-10'
         >
-            <div className=' flex items-center gap-3 backdrop-blur-[2px] bg-white/20 dark:bg-zinc-900/20  md:bg-zinc-100 md:dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-2 shadow-md '>
+            <div className='flex items-end gap-3 backdrop-blur-sm bg-white/95 dark:bg-slate-900/95 md:bg-transparent md:dark:bg-transparent border border-slate-200 dark:border-slate-800 md:border-none rounded-xl md:rounded-b-lg px-4 py-3 shadow-lg md:shadow-none'>
                 {/* Input */}
                 <textarea
                     onKeyDown={(e) => {
@@ -64,17 +64,18 @@ const MessageInput = () => {
                         el.style.height = "auto";
                         el.style.height = Math.min(el.scrollHeight, 120) + "px"; // max height
                     }}
-                    placeholder='Type your message...'
-                    className='flex-1 resize-none overflow-y-auto outline-none text-sm md:text-base text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 px-2 py-1 max-h-[120px]'
+                    placeholder='Type a message...'
+                    className='flex-1 resize-none overflow-y-auto outline-none text-sm md:text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-0 py-2 max-h-[120px] bg-transparent'
                 />
                 <Paperclip
-                    className={`${message.trim() ? "translate-x-0" : " translate-x-13"} transition-all duration-200 text-dark dark:text-white text-zinc-600 cursor-pointer rotate-180`}
+                    className={`${message.trim() ? "translate-x-0" : "translate-x-13"} transition-all duration-200 text-slate-600 dark:text-slate-400 cursor-pointer hover:text-slate-800 dark:hover:text-slate-300 flex-shrink-0 rotate-180`}
+                    size={20}
                 />
                 {/* Send Button */}
                 {
                     <button
                         type='submit'
-                        className={` ${message.trim() ? "translate-x-0 opacity-100" : " translate-x-50 opacity-0"} transition-all duration-300 flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700  cursor-pointer`}
+                        className={`${message.trim() ? "translate-x-0 opacity-100" : "translate-x-50 opacity-0"} transition-all duration-300 flex items-center justify-center w-9 h-9 rounded-lg bg-blue-500 hover:bg-blue-600 active:bg-blue-700 cursor-pointer flex-shrink-0 shadow-sm`}
                     >
                         <SendHorizonal className='text-white' size={18} />
                     </button>

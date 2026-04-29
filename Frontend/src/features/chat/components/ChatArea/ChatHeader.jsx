@@ -25,7 +25,7 @@ const ChatHeader = () => {
 
     return (
         <>
-            <div className='fixed w-full top-0 md:static flex items-center justify-between md:rounded-tr-4xl px-4 py-3 shadow-sm backdrop-blur-[2px] dark:bg-black/30 md:dark:bg-zinc-950 md:dark:border-zinc-900 border-b border-zinc-200 dark:border-zinc-700 bg-white/30 dark:text-white z-10'>
+            <div className='fixed w-full top-0 md:static flex items-center justify-between md:rounded-tr-lg px-4 py-3 shadow-sm backdrop-blur-sm dark:bg-slate-900/95 md:dark:bg-slate-900 md:dark:border-slate-800 border-b border-slate-200 dark:border-slate-800 bg-white dark:text-slate-100 z-10'>
                 <div className='flex items-center gap-3 min-w-0'>
                     <button
                         onClick={() => setSelectedUserId(null)}
@@ -35,20 +35,18 @@ const ChatHeader = () => {
                     </button>
                     <img
                         src={optimizeUrl(user?.avatar?.url, "small")}
-                        className='w-10 h-10 rounded-full'
+                        className='w-10 h-10 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-700'
                         alt='avatar'
                     />
                     <div className='min-w-0 flex-1'>
-                        <p className='font-semibold text-gray-800 dark:text-white truncate'>
+                        <p className='font-semibold text-slate-900 dark:text-slate-100 truncate text-sm'>
                             {user.name}
                         </p>
-                        <p
-                            className={`text-xs text-gray-600 dark:text-zinc-200`}
-                        >
+                        <p className='text-xs text-slate-600 dark:text-slate-400'>
                             {user.isOnline
-                                ? "online"
+                                ? "Online now"
                                 : user.lastSeen
-                                  ? formatDateTime(user.lastSeen)
+                                  ? `Last seen ${formatDateTime(user.lastSeen)}`
                                   : ""}
                         </p>
                     </div>

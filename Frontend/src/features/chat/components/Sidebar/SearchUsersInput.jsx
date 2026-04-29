@@ -37,30 +37,30 @@ const SearchUsersInput = () => {
     );
 
     return (
-        <div className='p-2 relative'>
+        <div className='px-4 py-3 relative'>
             {/* Search input */}
-            <div className='flex gap-2 items-center w-full px-4 py-2 border border-gray-300 group-focus-within:ring-blue-500 focus:outline-none focus:ring-2  rounded-full dark:bg-zinc-800 dark:border-zinc-700 dark:text-white'>
-                <Search size={22} className='dark:text-zinc-400' />
+            <div className='flex gap-2 items-center w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 focus:outline-none rounded-lg dark:bg-slate-800 dark:text-slate-100 bg-white transition-all'>
+                <Search size={20} className='text-slate-400 dark:text-slate-500 flex-shrink-0' />
                 <input
                     type='text'
-                    placeholder='Search users by username'
+                    placeholder='Search users...'
                     value={searchUsername}
                     onChange={(e) => setSearchUsername(e.target.value)}
-                    className=' text-md w-full focus:outline-none'
+                    className='text-sm w-full focus:outline-none bg-transparent text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400'
                 />
             </div>
 
             {/* Users dropdown */}
             {searchUsername.length > 0 && (
-                <div className='absolute top-14 left-0 w-full bg-white p-1  rounded-2xl dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg max-h-60 overflow-y-auto z-50'>
+                <div className='absolute top-16 left-4 right-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-lg max-h-60 overflow-y-auto z-50'>
                     {loading && (
-                        <div className='p-2 text-gray-400'>
-                            <ConversationListSkeleton />{" "}
+                        <div className='p-3 text-slate-400 dark:text-slate-500'>
+                            <ConversationListSkeleton />
                         </div>
                     )}
 
                     {!loading && users?.length === 0 && !error && (
-                        <p className='p-2 text-gray-400'>No users found</p>
+                        <p className='p-4 text-slate-400 dark:text-slate-500 text-center text-sm'>No users found</p>
                     )}
 
                     {users &&

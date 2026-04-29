@@ -28,7 +28,7 @@ const ConversationList = () => {
     }
 
     return (
-        <div className='space-y-2 py-2 px-1.5 h-screen'>
+        <div className='space-y-2 py-3 px-3 h-screen'>
             {conversations.length > 0 ? (
                 conversations?.map((conversation) => {
                     // extract user from participants array
@@ -53,7 +53,7 @@ const ConversationList = () => {
                     );
                 })
             ) : (
-                <p className='flex justify-center items-center h-full'>
+                <p className='flex justify-center items-center h-full text-slate-400 dark:text-slate-500 text-sm'>
                     Start your first conversation
                 </p>
             )}

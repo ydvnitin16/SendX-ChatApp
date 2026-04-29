@@ -36,7 +36,7 @@ const Interface = () => {
 
     return (
         <>
-            <div className='flex flex-col md:flex-row h-screen dark:bg-black bg-white md:px-2 font-sans relative'>
+            <div className='flex flex-col md:flex-row h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 md:p-3 font-sans relative gap-3'>
                 <ErrorBoundary>
                     <Sidebar />
                 </ErrorBoundary>

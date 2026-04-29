@@ -14,7 +14,7 @@ const Sidebar = () => {
     return (
         <>
             <aside
-                className={`md:w-1/3 lg:w-1/4 w-full bg-white overflow-y-auto scroll-smooth no-scrollbar rounded-2xl md:rounded-none md:rounded-l-4xl md:block dark:bg-zinc-950 dark:text-white z-10 ${
+                className={`md:w-1/3 lg:w-1/4 w-full bg-white dark:bg-slate-900 overflow-y-auto scroll-smooth no-scrollbar rounded-xl md:rounded-lg shadow-sm dark:shadow-lg dark:shadow-slate-950/30 md:block dark:text-slate-100 z-10 border border-slate-200/50 dark:border-slate-800/50 ${
                     selectedUserId ? "hidden md:block" : "block"
                 }`}
             >
